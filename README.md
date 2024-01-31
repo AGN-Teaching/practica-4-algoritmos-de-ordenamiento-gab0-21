@@ -61,3 +61,9 @@ Por otro lado la desviacion estandar tiene una variacion minima pues al ser valo
 Por otro lado requerimos de modificar el algoritmo de Merge sort para que tome en consideracion que a partir de un tamaño de arreglo 85 debe realizar el algoritmo de Insertion sort para ello establecemos un condicional el cual verificará si el tamaño del subarreglo es 85 o menor, y en ese caso, utilizará insertion_sort. De lo contrario, aplicará el algoritmo de merge_sort estándar.
 
 # Conclusiones
+
+En conclusion los experimentos realizados permitieron observar el comportamiento de los diferentes algoritmos en distintos contextos debido a eso pude ver que es necesario analizar primeramente los arreglos y la problematica a resolver para poder tomar una decision sobre el algoritmo a implementar, por ejemplo Insertion Sort cuando el conjunto de datos es pequeño o ya está parcialmente ordenado pues funciona bien para conjuntos de datos pequeños debido a su simplicidad y baja sobrecarga y pasa algo muy similar para Selection Sort. 
+
+Por otro lado Merge Sort y Quick Sort son una excelente elección para conjuntos de datos grandes y desordenados. Ofrece un rendimiento constante en diferentes escenarios y garantiza un tiempo de ejecución O(n log n), aunque su principal desventaja es el uso de memoria adicional. 
+
+Fue util realizar los experimentos tambien para observar su comportamiento en una computadora pues al trabajar con arreglos tan grandes se requiere del uso de mayores recursos, en el caso de los algoritmos iterativos a diferencia de por ejemplo los algoritmos recursivos como Merge Sort y aunque en arreglos no tan grandes algunos tiempos pueden tener diferencias minimas, es cuando implementamos arreglos mayores que vemos la verdadera ventaja de dichos algoritmos.
