@@ -26,3 +26,38 @@ Se toma la raíz cuadrada de la varianza para obtener la desviación estándar.
 Por otro lado para la realizacion de los experimentos debemos tomar en cuenta que al pasar de un arreglo de tamaño 100,000 los tiempos de ejecucion de los algoritmos Insertion sort, Selection sort, Bubble sort pasan a ser bastante altos por lo que para la computadora es un proceso muy tardado poder realizar las 30 repeticiones con estos tamaños, por lo que se tomo la decision que a partir de este tamaño solo se ejecutarian los algoritmos Merge sort y Quick sort para poder obtener resultados con tamaños que sobrepasen los 500 mil, para tamaños de mas de 50 millones solo utilizaremos Merge sort. Limitar la ejecución de algoritmos menos eficientes para conjuntos de datos grandes permite optimizar el uso de recursos computacionales. En lugar de gastar tiempo en ejecutar algoritmos con tiempos de ejecución prolongados, puedes centrarte en obtener resultados más rápidos utilizando algoritmos más eficientes.
 
 # Analisis de los resultados 
+
+Comenzando por analizar los tiempos promedio de cada uno de los algoritmos de ordenamiento; podemos observar en el caso de Insertion sort, Selection sort y Bubble sort que el tiempo no hace mas que aumentar exponencialmente al momento que aumentamos tambien el tamaño de los arreglos, pues como mencionamos anteriormente estos algoritmos tienen complejidad n^2 siendo n el tamaño de los arreglos que estamos manejando. Si bien durante los tamaños de arreglo de 5 hasta 100 se mantiene con tiempos cercanos a 0, una vez que sobre pasamos este tamaño la cifra comienza a despegarse cada vez mas del 0 y una vez que llegamos a los arreglos con tamaño 100,000 o superior la cifra se despega demasiado de lo que teniamos en un principio llegando en el caso de Insertion a los 4.96 segundos y los otros 2 hasta los 7 segundos teniendo un aumento de hasta el 35900%, con arreglos de un tamaño mayor va aumentando exponencialmente haciendo ineficiente para la computadora realizar estos procesos utilizando estos algoritmos por los tiempos extensos que dan los mismos como lo mencionamos en el analisis. 
+
+![Insertion](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/9a3efd19-f358-4f60-b1b1-0ad196ec2a18)
+![selection](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/e1cf94a9-a7fb-4bcc-8ed2-d1d3df8bdbda)
+![Bubble](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/a1e69fdf-311a-4dca-85aa-15d972628e98)
+
+En el caso de Merge sort y Quick sort los tiempos si bien aumentan, no se despegan demasiado del 0 si no hasta superar los 100 millones en el tamaño del arreglo, en ese tamaño es cuando observamos un cambio notable entre ambos algoritmos siendo Quick sort bastante mas lento a comparacion de Merge sort, esto puede ser debido a la logica de funcionamiento de Quik sort pues puede degradarse a O(n^2) en el peor caso cuando la elección del pivote no es adecuada y resulta en particiones desbalanceadas. Una vez que sobrepasamos 100 millones utilizaremos solamente Merge sort para obtener los datos, donde podemos observar que con arreglos de tamaño 500 millones los tiempos aumentan hasta lo 132 segundos donde si bien es posible realizar estas tareas, se vuelve un proceso tardado al momento de realizar las mismas con arreglos de tamaños tan grandes.
+
+![Merge](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/bda61e58-c7d0-463e-979c-09b3e99b53b9)
+![Quicsort](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/14ff5d80-8298-4a18-989a-e0459e787723)
+
+Podemos observar que en resumen estos 2 ultimos algoritmos son mas eficientes para arreglos de tamaño mucho mayor.
+
+Ahora en el caso de la desviacion estandar para los algoritmos iterativos Insertion sort, Selection sort y Bubble sort podemos observar que hay un aumento iniciando con valores cercanos al cero y despegandose cada vez mas de ellos sin embargo nunca sobre pasa los valores de 1, al principio, las mediciones son bastante precisas y consistentes, pero a medida que avanzas, hay más variabilidad, aunque sigue siendo relativamente baja en comparación con el rango general de los datos esto podría indicar que las mediciones iniciales son bastante consistentes y no hay mucha variabilidad entre ellas. 
+
+Para los algoritmos Merge sort y Quick sort los valores son aun mas consistentes y de igual forma no hay demasiada variabilidad despegandose incluso menos del 0 que los algortimos anteriores, sin embargo cuando sobre pasamos el tamaño de 100 millones hay una variacion considerable en base a los datos anteriores esto sugiere que hay una variabilidad más pronunciada entre los valores de los datos, están más dispersos y hay una mayor amplitud en las diferencias entre los puntos individuales y la media del conjunto de datos.
+
+![Desviacion](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/ce8b6495-1b81-4ef3-95ee-171186b05ed8)
+
+# Extra 
+Para el caso de encontrar un numero k de tamaño de arreglo donde el algoritmo Insertion sort sea mas eficiente que el Merge sort, requerimos de realizar diversos experimentos tomando como base los realizados anteriormente para trazar un parametro y tratar de encontrar el numero que necesitamos; analizando nuestros experimentos nos dimos cuenta que apartir de arreglos de tamaño 100 es cuando existe una variacion mas considerable entre los tiempos promedio de Insertion y Merge por lo que decidimos ir reduciendo de 10 en 10 para encontrar el valor, probando en 90 observamos que si bien los valores se parecen sigue siendo mejor Merge que Insertion sin embargo en 80 es el caso contrario por lo que delimitamos a un intervalo entre 80 y 90 hallando que a partir de un tamaño 85 o menor Insertion es superior en tiempo promedio que Merge.
+
+Una vez que hayamos el numero a partir del cual Insertion sort es mas eficiente que Merge sort comenzamos a realizar experimentos observando que efectivamente conforme vamos reduciendo el tamaño de los arreglos mejora el promedio de Insertion y en caso contrario hay una desmejora en los tiempos del algoritmo Merge siendo con la prueba de tamaño 10 con la que existe una diferencia mas notoria pues hay una variacion de hasta 4 segundos.
+
+![Insertion1](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/3a537160-6c8f-4e2a-9fd2-a62cb677f52e)
+![Merge1](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/57d64820-1a96-478b-ac7a-88cf2223eb6f)
+
+Por otro lado la desviacion estandar tiene una variacion minima pues al ser valores cercanos a 0 la desviacion es muy pequeña lo que indica menor dispersión de los datos, lo que sugiere una mayor agrupación alrededor de la media es decir que no hay una variacion muy grande entre la media de los datos obtenidos.
+
+![Desviacion1](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/ff694883-5859-435d-9662-02238608cbac)
+
+Por otro lado requerimos de modificar el algoritmo de Merge sort para que tome en consideracion que a partir de un tamaño de arreglo 85 debe realizar el algoritmo de Insertion sort para ello establecemos un condicional el cual verificará si el tamaño del subarreglo es 85 o menor, y en ese caso, utilizará insertion_sort. De lo contrario, aplicará el algoritmo de merge_sort estándar.
+
+# Conclusiones
