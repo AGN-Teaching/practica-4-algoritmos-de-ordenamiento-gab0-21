@@ -30,22 +30,31 @@ Por otro lado para la realizacion de los experimentos debemos tomar en cuenta qu
 Comenzando por analizar los tiempos promedio de cada uno de los algoritmos de ordenamiento; podemos observar en el caso de Insertion sort, Selection sort y Bubble sort que el tiempo no hace mas que aumentar exponencialmente al momento que aumentamos tambien el tamaño de los arreglos, pues como mencionamos anteriormente estos algoritmos tienen complejidad n^2 siendo n el tamaño de los arreglos que estamos manejando. Si bien durante los tamaños de arreglo de 5 hasta 100 se mantiene con tiempos cercanos a 0, una vez que sobre pasamos este tamaño la cifra comienza a despegarse cada vez mas del 0 y una vez que llegamos a los arreglos con tamaño 100,000 o superior la cifra se despega demasiado de lo que teniamos en un principio llegando en el caso de Insertion a los 4.96 segundos y los otros 2 hasta los 7 segundos teniendo un aumento de hasta el 35900%, con arreglos de un tamaño mayor va aumentando exponencialmente haciendo ineficiente para la computadora realizar estos procesos utilizando estos algoritmos por los tiempos extensos que dan los mismos como lo mencionamos en el analisis. 
 
 ![Insertion](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/9a3efd19-f358-4f60-b1b1-0ad196ec2a18)
+
 *Tiempo en segundos
 En el caso de insertion Sort podemos observar que a comparacion de los 3 algoritmos iterativos, es el mas eficiente en terminos de tiempo para arreglos de menor tamaño.
+
 ![selection](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/e1cf94a9-a7fb-4bcc-8ed2-d1d3df8bdbda)
+
 *Tiempo en segundos
 Selection Sort es el segundo mejor algoritmo iterativo en terminos de tiempo siendo peor por unas decimas de segundo a Insertion Sort y bastante similar a Bubble Sort en terminos de tiempos promedio. 
+
 ![Bubble](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/a1e69fdf-311a-4dca-85aa-15d972628e98)
+
 *Tiempo en segundos
 Bubble sort es el algoritmo iterativo mas lento de los 3 consiguiendo tiempos bastante inferiores para arreglos pequeños a comparacion de Insertion Sort.
 
 En el caso de Merge sort y Quick sort los tiempos si bien aumentan, no se despegan demasiado del 0 si no hasta superar los 100 millones en el tamaño del arreglo, en ese tamaño es cuando observamos un cambio notable entre ambos algoritmos siendo Quick sort bastante mas lento a comparacion de Merge sort, esto puede ser debido a la logica de funcionamiento de Quik sort pues puede degradarse a O(n^2) en el peor caso cuando la elección del pivote no es adecuada y resulta en particiones desbalanceadas. Una vez que sobrepasamos 100 millones utilizaremos solamente Merge sort para obtener los datos, donde podemos observar que con arreglos de tamaño 500 millones los tiempos aumentan hasta lo 132 segundos donde si bien es posible realizar estas tareas, se vuelve un proceso tardado al momento de realizar las mismas con arreglos de tamaños tan grandes.
 
 ![Merge](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/bda61e58-c7d0-463e-979c-09b3e99b53b9)
+
 *Tiempo en segundos.
 En terminos de eficiencia de tiempo, Merge sort es el mejor cuando se trata de arreglos cuyo tamaño supere los 100,000 llegando a sobre pasar el tamaño de los 50 millones cuando realmente se puede observar una diferencia de aumento notable entre los tiempos de dicho algoritmo.
+
 ![Quicsort](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/14ff5d80-8298-4a18-989a-e0459e787723)
+
 Quick Sort es el segundo algortimo mas eficiente para arreglos de tamaños muy grandes, en algunos casos cuando la particion es mas adecuada puede llegar incluso a superar a Merge Sort por algunas centecimas de segundo sin embargo al sobre pasar los 50 millones la diferencia entre ambos es muy grande por lo que ya no es optimo el uso del mismo.
+
 ![TiempoyDesviacion](https://github.com/AGN-Teaching/practica-4-algoritmos-de-ordenamiento-gab0-21/assets/118947538/8017382c-1a83-4416-9c07-a02f4820d8e6)
 
 En resumen estos 2 ultimos algoritmos son mas eficientes para arreglos de tamaño mucho mayor.
